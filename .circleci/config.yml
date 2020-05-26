@@ -25,10 +25,10 @@ jobs:
           name: "Build Application according to some given configuration"
           command: dotnet.exe build ./Renting.MasterServices.sln --configuration Release  
 
-workflow:
+workflows:
   test_and_build:
     jobs: 
       - test
       - build:
-        required:
+        requires:
           - test
