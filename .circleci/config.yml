@@ -4,7 +4,7 @@ orbs:
   windows: circleci/windows@2.4.0
 
 jobs: 
-  tets:
+  build:
     executor: 
       name: windows/default
     steps:
@@ -14,4 +14,4 @@ jobs:
           command: dotnet.exe restore ./Renting.MasterServices.sln
       - run:
           name: "Run application test"
-          command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"
+          command: dotnet.exe build ./Renting.MasterServices.sln --configuration Release  
