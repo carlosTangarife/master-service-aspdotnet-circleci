@@ -15,6 +15,11 @@ jobs:
       - run:
           name: "Run application test"
           command: dotnet.exe test ./Renting.MasterServices.sln -v n --results-directory:test_coverage --collect:"Code Coverage"
+      - run:
+          name: "Print Working Directory"
+          command: pwd
+      - store_test_results:
+          path: C:\Users\circleci\project\test_coverage
   build:
     description: "Build application with Release configuration"
     executor:
