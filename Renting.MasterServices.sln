@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Core", "Renting.MasterServices.Core\Renting.MasterServices.Core.csproj", "{26397BD8-1C29-4297-A4E7-A85E7DD00008}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Infraestructure", "Renting.MasterServices.Infraestructure\Renting.MasterServices.Infraestructure.csproj", "{303F8C30-EDF5-48C2-AD23-FDAB18639F1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Domain", "Renting.MasterServices.Domain\Renting.MasterServices.Domain.csproj", "{86CA4150-E08A-42A4-AD88-BE61DA8D08F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Api", "Renting.MasterServices.Api\Renting.MasterServices.Api.csproj", "{96BD12C9-64AC-4204-B1F5-415EDFB7DA2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E3D6121F-4836-4A0B-82B9-9F763B8668D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Core.Test", "Renting.MasterServices.Core.Test\Renting.MasterServices.Core.Test.csproj", "{11B1545B-4919-4FE5-B528-2D0FE43DE85D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{14178117-81B9-4DB1-97E3-2302E2A86347}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26397BD8-1C29-4297-A4E7-A85E7DD00008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26397BD8-1C29-4297-A4E7-A85E7DD00008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26397BD8-1C29-4297-A4E7-A85E7DD00008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26397BD8-1C29-4297-A4E7-A85E7DD00008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{303F8C30-EDF5-48C2-AD23-FDAB18639F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{303F8C30-EDF5-48C2-AD23-FDAB18639F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{303F8C30-EDF5-48C2-AD23-FDAB18639F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{303F8C30-EDF5-48C2-AD23-FDAB18639F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CA4150-E08A-42A4-AD88-BE61DA8D08F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CA4150-E08A-42A4-AD88-BE61DA8D08F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CA4150-E08A-42A4-AD88-BE61DA8D08F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CA4150-E08A-42A4-AD88-BE61DA8D08F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BD12C9-64AC-4204-B1F5-415EDFB7DA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BD12C9-64AC-4204-B1F5-415EDFB7DA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BD12C9-64AC-4204-B1F5-415EDFB7DA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BD12C9-64AC-4204-B1F5-415EDFB7DA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14178117-81B9-4DB1-97E3-2302E2A86347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14178117-81B9-4DB1-97E3-2302E2A86347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14178117-81B9-4DB1-97E3-2302E2A86347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14178117-81B9-4DB1-97E3-2302E2A86347}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11B1545B-4919-4FE5-B528-2D0FE43DE85D} = {E3D6121F-4836-4A0B-82B9-9F763B8668D8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C431E39-B25E-4666-AC57-ABE418683B45}
+	EndGlobalSection
+EndGlobal

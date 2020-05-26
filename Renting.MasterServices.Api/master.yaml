@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: master-test
+  name: master-test
+  namespace: pruebas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: master-test
+  template:
+    metadata:
+      labels:
+        app: master-test
+    spec:     
+      containers:
+      - name : master-test
+        image: pocrenting/master-test
+        imagePullPolicy: "Always"       
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        resources:
+          requests:
+            memory: "512M"
+            cpu: "250m"                              
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: master-test
+  namespace: pruebas
+  labels:
+    app: master-test
+spec:
+  type: ClusterIP
+  sessionAffinity: ClientIP
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  selector:
+    app: master-test
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:  
+  name: master-test
+  namespace: pruebas  
+spec:
+  rules:
+  - host: rc-test-masters.surenting.com.co
+    http:
+      paths:
+      - backend:
+          serviceName: master-test
+          servicePort: 80
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: master-test
+  namespace: pruebas
+spec:
+  maxReplicas: 4
+  minReplicas: 2
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: master-test
+  targetCPUUtilizationPercentage: 75

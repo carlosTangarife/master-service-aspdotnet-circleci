@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\inetpub\wwwroot\maestros</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="StringConnectionFlota">
+      <Value>Server=SRCMDEQBD11\PRB0%3bDatabase=dbFlotas%3bPersist Security Info=False%3bUser Id=USR_WEB_PROD%3bPassword=789456123%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="StringConnectionGestionFlota">
+      <Value>Server=SRCMDEQBD11\prbext%3bDatabase=dbGestionFlota%3bPersist Security Info=False%3bUser Id=USR_WEB_PROD%3bPassword=789456123%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="StringConnectionGestionFlotaTrans">
+      <Value>Server=SRCMDEQBD11\prb0%3bDatabase=dbGestionFlota%3bPersist Security Info=False%3bUser Id=USR_WEB_PROD%3bPassword=789456123%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="StringConnectionSurenting">
+      <Value>Server=SRCMDEQBD11\prbext%3bDatabase=dbSurenting%3bPersist Security Info=False%3bUser Id=USR_WEB_PROD%3bPassword=789456123%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="StringConnectionSurentingTrans">
+      <Value>Server=SRCMDEQBD11\PRB0%3bDatabase=dbSurenting%3bPersist Security Info=False%3bUser Id=usrCeiba_APPClientes%3bPassword=APPClientes_2018%2a%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="StringConnectionWebProd">
+      <Value>Server=SRCMDEQBD11\PRBBI%3bDatabase=dbWebProd%3bPersist Security Info=False%3bUser Id=USR_WEB_PROD%3bPassword=789456123%3b MultipleActiveResultSets=True%3b TrustServerCertificate=False%3bConnection Timeout=120%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
