@@ -1,6 +1,8 @@
 version: 2.1 
+
 orbs:
   windows: circleci/windows@2.4.0
+
 jobs: 
   tets:
     executor: 
@@ -8,8 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: "Install project dependencies"
-        command: dotnet.exe restore ./Renting.MasterServices.sln
+          name: "Install project dependencies"
+          command: dotnet.exe restore ./Renting.MasterServices.sln
       - run:
-        name: "Run application test"
-        command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"
+          name: "Run application test"
+          command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"
