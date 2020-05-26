@@ -4,7 +4,7 @@ orbs:
 
 jobs: 
   tets:
-    description: Setup and run application tests
+    description: "Setup and run application tests"
     executor: 
       name: windows/default
     steps:
@@ -20,7 +20,7 @@ jobs:
           - C:\Users\circleci\.nuget\packages
         key: dotnet-packages-v1-{{ checksum "Renting.MasterServices.sln" }}
       - run:
-        name: 'Run application test'
+        name: "Run application test"
         command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"
       - run:
         name: "Print Working Directory"
@@ -29,7 +29,7 @@ jobs:
         path: C:\Users\circleci\project\test_coverage
   
   build:
-    description: Build application with Release configuration
+    description: "Build application with Release configuration"
     executor:
       name: windows/default
     steps:
