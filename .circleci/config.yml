@@ -12,22 +12,4 @@ jobs:
         command: dotnet.exe restore ./Renting.MasterServices.sln
       - run:
         name: "Run application test"
-        command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"  
-  build:
-    description: "Build application with Release configuration"
-    executor:
-      name: windows/default
-    steps:
-      - checkout
-      - run:
-          name: "Build Application according to some given configuration"
-          command: dotnet.exe build ./Renting.MasterServices.sln --configuration Release          
-
-workflow:
-  test_and_build:
-    jobs: 
-      - test
-      - build:
-        required:
-          -test
-  
+        command: dotnet.exe test ./Renting.MasterServices.core.Test -v --results-directory:test_coverage --collect:"Code Coverage"
