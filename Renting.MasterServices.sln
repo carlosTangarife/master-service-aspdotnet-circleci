@@ -15,8 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E3D6121F-4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Renting.MasterServices.Core.Test", "Renting.MasterServices.Core.Test\Renting.MasterServices.Core.Test.csproj", "{11B1545B-4919-4FE5-B528-2D0FE43DE85D}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{14178117-81B9-4DB1-97E3-2302E2A86347}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,10 +41,6 @@ Global
 		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B1545B-4919-4FE5-B528-2D0FE43DE85D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{14178117-81B9-4DB1-97E3-2302E2A86347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14178117-81B9-4DB1-97E3-2302E2A86347}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14178117-81B9-4DB1-97E3-2302E2A86347}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14178117-81B9-4DB1-97E3-2302E2A86347}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
