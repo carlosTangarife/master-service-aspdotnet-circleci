@@ -17,7 +17,7 @@ jobs:
           name: "Run application test"
           command: dotnet.exe test ./Renting.MasterServices.core.test -v n --results-directory:test_coverage --collect:"Code Coverage"
       - store_artifacts:
-          path: /tmp/test_coverage
+          path: /Renting.MasterServices/test_coverage
   build:
     description: "Build application with Release configuration"
     executor:
@@ -39,7 +39,7 @@ jobs:
             name: "Publish artifact"
             command: dotnet.exe publish ./Renting.MasterServices.Api/Renting.MasterServices.Api.csproj --configuration Release --output publish_build --self-contained false 
         - store_artifacts:
-            path: /tmp/publish_build   
+            path: /Renting.MasterServices/publish_build   
 
 workflows:
   test_and_build_and_publish:
