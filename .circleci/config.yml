@@ -21,7 +21,7 @@ jobs:
       - save_cache:
           key: dotnet-packages-v1-{{ checksum "Renting.MasterServices.sln" }}
           paths:
-            - /Renting.MasterServices/nuget/packages
+            - C:\Users\circleci\.nuget\packages
   
   test:
     executor: 
