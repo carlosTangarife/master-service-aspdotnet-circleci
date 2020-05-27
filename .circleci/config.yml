@@ -4,6 +4,25 @@ orbs:
   windows: circleci/windows@2.4.0
 
 jobs: 
+  restore:
+    executor: 
+      name: windows/default
+    working_directory: /Renting.MasterServices
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+           - dotnet-packages-v1-{{ checksum "Renting.MasterServices.sln" }}
+
+      - run:
+          name: "Install project dependencies"
+          command: dotnet.exe restore ./Renting.MasterServices.sln
+      
+      - save_cache:
+          key: dotnet-packages-v1-{{ checksum "Renting.MasterServices.sln" }}
+          paths:
+            - /Renting.MasterServices/nuget/packages
+  
   test:
     executor: 
       name: windows/default
@@ -11,13 +30,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Install project dependencies"
-          command: dotnet.exe restore ./Renting.MasterServices.sln
-      - run:
           name: "Run application test"
           command: dotnet.exe test ./Renting.MasterServices.core.test -v n --results-directory:test_coverage --collect:"Code Coverage"
+
       - store_artifacts:
           path: /Renting.MasterServices/test_coverage
+  
   build:
     description: "Build application with Release configuration"
     executor:
@@ -28,6 +46,7 @@ jobs:
       - run:
           name: "Build Application according to some given configuration"
           command: dotnet.exe build ./Renting.MasterServices.sln --configuration Release
+
   publish:
     description: "Publish application with Release configuration"
     executor:
@@ -38,13 +57,17 @@ jobs:
         - run:
             name: "Publish artifact"
             command: dotnet.exe publish ./Renting.MasterServices.Api/Renting.MasterServices.Api.csproj --configuration Release --output publish_build --self-contained false 
+
         - store_artifacts:
             path: /Renting.MasterServices/publish_build   
 
 workflows:
   test_and_build_and_publish:
     jobs:
-      - test
+      - restore
+      - test:
+          requires:
+            - restore
       - build:
           requires:
             - test
