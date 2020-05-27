@@ -30,8 +30,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Run application test"
-          command: dotnet.exe test ./Renting.MasterServices.core.test -v n --results-directory:test_coverage --collect:"Code Coverage"
+          name: "Run application test."
+          command: dotnet.exe test ./Renting.MasterServices.core.test -v n --results-directory:test_coverage --collect:"Code Coverage" --no-build 
 
       - store_artifacts:
           path: /Renting.MasterServices/test_coverage
