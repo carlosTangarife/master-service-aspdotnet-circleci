@@ -22,6 +22,7 @@ jobs:
     description: "Build application with Release configuration"
     executor:
       name: windows/default
+    working_directory: /Renting.MasterServices
     steps:
       - checkout
       - run:
@@ -31,16 +32,17 @@ jobs:
     description: "Publish application with Release configuration"
     executor:
       name: windows/default
+    working_directory: /Renting.MasterServices
     steps:
-      - checkout
-      - run:
-          name: "Publish artifact"
-          command: dotnet.exe publish ./Renting.MasterServices.Api/Renting.MasterServices.Api.csproj --configuration Release --output publish_build --self-contained false 
-      - store_artifacts:
-        path: /tmp/publish_build   
+        - checkout
+        - run:
+            name: "Publish artifact"
+            command: dotnet.exe publish ./Renting.MasterServices.Api/Renting.MasterServices.Api.csproj --configuration Release --output publish_build --self-contained false 
+        - store_artifacts:
+            path: /tmp/publish_build   
 
 workflows:
-  test_and_build:
+  test_and_build_and_publish:
     jobs:
       - test
       - build:
